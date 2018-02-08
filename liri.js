@@ -63,6 +63,10 @@ function myTweets() {
 
 // OMDB Node Logic to return movies
 function myMovie(movie) {
+    if (!movie) {
+        movie = 'Mr.Nobody';
+    }
+    console.log(movie)
     request('http://www.omdbapi.com/?t=' + movie + '&apikey=acd79ab3&t&plot&y', function(error, response, body) {
         if (error) {
             return console.log('error:', error);
